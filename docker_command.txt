@@ -1,0 +1,4 @@
+run all containers docker-compose up --build -d
+stop containers docker stop $(docker ps -a -q)
+delete all containers docker rm $(docker ps -a -q)
+show all run containers docker ps

@@ -1,0 +1,10 @@
+.idea
+/src/image/
+/src/system/cache/
+/src/system/logs/
+/src/
+/src/import/
+/src/node_modules/
+/src/package-lock.json
+/src/system/storage/
+/src/robots.txt
