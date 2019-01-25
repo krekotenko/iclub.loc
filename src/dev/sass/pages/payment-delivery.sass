@@ -1,0 +1,81 @@
+.paymeny_delivery_container
+    background-color: $white
+    margin-top: 20px
+    font-size: 0
+
+.delivery_ways_block
+    width: 50%
+    max-width: 570px
+    border-right: 1px solid #e9e9e9
+
+.payment_ways_block
+    width: 50%
+    max-width: 600px
+
+.payment_delivery_item
+    display: inline-block
+    vertical-align: top
+    margin-bottom: 30px
+    svg
+        fill: $main
+        display: inline-block
+        vertical-align: middle
+        width: 48px
+
+.delivery_ways_block
+    padding: 35px 15px 65px 30px
+    .payment_delivery_item
+        &:last-child
+            margin-left: 70px
+
+.payment_ways_block
+    padding: 35px 15px 65px 30px
+    .payment_delivery_item
+        &:last-child
+            margin-left: 80px
+
+.block_title
+    font-family: $Montserrat
+    font-weight: 500
+    font-size: 18px
+    color: $dark
+    margin-bottom: 35px
+
+.pdi_icon
+    width: 100px
+    height: 100px
+    line-height: 98px
+    text-align: center
+    border-radius: 50%
+    border: 1px solid #e9e9e9
+    margin-bottom: 20px
+
+.pdi_title
+    font-size: 16px
+    color: $dark
+    margin-bottom: 10px
+
+.pdi_text
+    font-size: 13px
+    color: $lightGray2
+
+@media screen and (max-width: 1165px)
+    .payment_ways_block,
+    .delivery_ways_block 
+        .payment_delivery_item
+            display: block
+            &:last-child
+                margin-left: 0
+    .pdi_text br
+        display: none
+
+@media screen and (max-width: 540px)
+    .delivery_ways_block,
+    .payment_ways_block
+        width: 100%
+        max-width: 100%
+
+    .delivery_ways_block
+        padding-bottom: 0
+        border-right: none
+        border-bottom: 1px solid #e9e9e9

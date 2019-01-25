@@ -1,0 +1,362 @@
+.header
+    position: relative
+    z-index: 3
+    &-top
+        background-color: $dark
+        padding: 15px 0
+    &-middle
+        background-color: $main
+        padding: 18px 0
+        position: relative
+        z-index: 1
+    &-bottom
+        background-color: #fff
+        box-shadow: 0px 0px 25px 0px rgba(50, 51, 55, 0.15)
+        &-wrapper
+            overflow: hidden
+    &-center-block
+        width: 66.9%
+        flex-wrap: nowrap
+
+    &-menu
+        ul
+            margin: 0
+            padding: 0
+            li
+                display: inline-block
+                vertical-align: middle
+                a
+                    color: $white
+                    line-height: 13px
+                    opacity: .5
+                    @include transition-in
+                    &:hover
+                        opacity: 1
+                        @include transition-out
+                & + li
+                    margin-left: 30px
+
+    &-contact
+        &__item + &__item
+            margin-left: 15px
+
+    &-categories       
+        & > ul
+            margin: 0 -35px
+            display: flex
+            justify-content: center
+            position: relative 
+            & > li
+                & > a
+                    color: $dark
+                    text-transform: uppercase
+                    font-size: 14px
+                    font-family: $Montserrat
+                    line-height: 50px
+                    display: block
+                    height: 50px
+                    padding: 0px 34.4px
+                    @include transition-in
+                &:hover
+                    background-color: #fafafa
+                    @include transition-out
+                    & .header-categories-children
+                        opacity: 1
+                        visibility: visible
+                        z-index: 1000
+                        top: 100%
+                        @include transition-out
+                    
+                &:nth-last-child(1) > a
+                    background-color: #dff9fc
+                    &:hover
+                        background-color: rgba(#dff9fc, 0.7)
+                        @include transition-out
+                &:nth-last-child(2) > a
+                    background-color: #e7dffc
+                    &:hover
+                        background-color: rgba(#e7dffc, 0.7)
+                        @include transition-out
+                &:nth-last-child(3) > a
+                    background-color: #ffe3e7
+                    &:hover
+                        background-color: rgba(#ffe3e7, 0.7)
+                        @include transition-out
+        &-children
+            position: absolute
+            top: 130%
+            opacity: 0
+            visibility: hidden
+            z-index: -1000
+            left: 0
+            right: 0
+            width: 100%
+            display: flex
+            background-color: #fafafa
+            padding: 38px 30px 45px
+            @include transition-in
+            &__img
+                margin-right: 30px
+            &__list
+                h6 
+                    font-size: 14px
+                    line-height: 14px
+                    font-family: $Montserrat
+                    font-weight: 700
+                    margin-bottom: 15px
+                & ul
+                    li + li
+                        margin-top: 7px               
+                
+
+        
+
+
+
+.personal-cabinet
+    @include transition-in
+    &:hover
+        opacity: 0.5
+        @include transition-out
+    &__icon
+        margin-right: 5px
+
+
+.search
+    position: relative
+    &-block
+        width: 100%
+        position: relative
+    &-button
+        position: absolute
+        background-color: transparent
+        top: 0
+        bottom: 0
+        height: 40px
+        line-height: 40px
+        display: block
+        right: 15px
+        border: 0
+        padding: 0
+        cursor: pointer
+    &__icon        
+        transform: scale(-1, 1)
+
+
+.time-work
+    &__text-content
+        font-size: 15px
+        line-height: 15px
+
+.phone-work
+    &__text-content
+        font-size: 24px
+        line-height: 24px
+        color: $white
+        text-decoration: none
+        color: $white
+        @include transition-in
+        &:hover
+            opacity: 0.7
+            color: $white
+            text-decoration: none
+            @include transition-out
+
+
+.counter
+    position: absolute 
+    background-color: #fff
+    display: block
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    background-color: #ffd541
+    color: $dark
+    text-align: center
+    line-height: 20px
+    font-size: 12px
+    @include transition-in
+    &__favorite
+        right: -12px
+        top: 1px
+    &__cart
+        top: 3px
+        right: -7px
+        font-weight: 400
+
+.cart
+    font-size: 18px
+    font-weight: 600
+    &:hover
+        text-decoration: none  
+    &__price
+        margin-left: 10px
+
+
+.favorite
+    margin-right: 25px   
+    & svg
+        @include transition-in 
+        &:hover
+            fill: #ffffff
+            @include transition-out
+
+    &_liked
+        svg
+            fill: #ffffff !important
+            @include transition-out
+
+
+
+.header-icon   
+    height: 21px
+    display: inline-block
+    &:hover .counter
+        transform: translate(6px)
+        @include transition-out
+
+
+@media screen and (max-width: 1200px)
+    .header
+        &-categories
+            ul
+                margin: 0
+                li
+                    a
+                        font-size: 13px
+                        padding: 0px 25px
+
+    .cart
+        font-size: 16px
+    .favorite
+        margin-right: 20px
+    .favorite
+        &__icon
+            position: relative
+            top: 2px
+    .counter__favorite
+        top: 2px
+
+
+@media screen and (max-width: 1098px)
+    
+    .header
+        &-categories
+            ul
+                margin: 0 -18px
+                li
+                    a
+                        font-size: 13px
+                        padding: 0px 18px
+            &-children__img
+                margin-right: 12px
+
+    .phone-work
+        &__text
+            &-title
+                font-size: 12px
+            &-content
+                font-size: 20px
+                line-height: 20px
+
+    .cart__price
+        margin-left: 7px
+        display: inline-block
+        font-size: 14px
+    .header-middle
+        .colpadding0
+            padding: 0 15px
+
+    .favorite
+        margin-right: 15px
+
+
+@media screen and (max-width: 992px)
+    .header-contact
+        &__item + &__item
+            margin-left: 0
+
+    .cart__price
+        display: none
+    
+    .burger
+        position: relative
+        margin: auto
+        width: 30px
+        height: 20px
+        overflow: hidden
+        background: linear-gradient(to right, $white 0%, $white 100%)
+        background-size: 50px 2px
+        background-position: center center
+        background-repeat: no-repeat
+        transition: 0.2s background
+        border: none
+        font-size: 0
+        padding: 0
+        outline: none
+        cursor: pointer
+        &::before, 
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 35px
+            height: 2px
+            background: $white
+            transition: 0.2s transform
+            transform-origin: 8px 7px
+        &::after 
+            top: auto
+            bottom: 0
+            transform-origin: 8px -5px        
+        &.is-open 
+            background-size: 0px 2px            
+            &::before 
+                transform: rotate(45deg)        
+            &:after
+                transform: rotate(-45deg)
+    .header-top
+        padding: 7px 0 11px
+            
+
+// @media screen and (max-width: 768px)
+    
+
+
+@media screen and (max-width: 576px)
+    .header-middle
+        padding: 9px 0 13px
+
+    .favorite 
+        margin-right: 20px
+
+    .header-search
+        position: fixed
+        left: 0
+        top: 129px !important
+        width: 100%
+        z-index: 2
+        top: calc(100% + 15px)
+        opacity: 0
+        visibility: hidden
+        z-index: -998
+        @include transition-in
+        &.is-open
+            top: 109px !important
+            opacity: 1
+            visibility: visible
+            z-index: 998
+            @include transition-out
+
+
+    .header-logo
+        svg
+            width: 88px !important
+            height: 44px !important
+
+
+
+
+
+

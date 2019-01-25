@@ -1,0 +1,264 @@
+// personal data
+.personal
+    margin-top: 20px
+    &-box
+        background-color: $white
+        padding: 35px
+        .form-control
+            
+    &-nav
+        .arrow
+            border-color: #7f7f7f
+            transform: rotate(45deg)
+        .list-group
+            background: $white
+            padding: 12px 20px 0
+            border: 1px solid #e9e9e9            
+            &-item
+                border-radius: 0
+                border: none     
+                padding: 17px 0
+                margin-bottom: 0
+                border-bottom: 1px solid #e9e9e9
+                a
+                    color: $main
+                &.active
+                    background-color: transparent
+                    a
+                        color: #7f7f7f
+                        
+                &:last-child
+                    border: none
+
+    &-data
+        margin-top: 25px
+.form
+    .form-group
+        text-align: left
+    label
+        color: #7f7f7f
+        margin-bottom: 5px
+    input.form-control,
+    textarea.form-control
+        padding: 9 10px
+        height: 35px        
+        color: $dark
+        border: 1px solid #e9e9e9
+        @include transition-in
+        &.is-invalid
+            border-color: #dc3545 !important
+            @include transition-out
+    .nice-select
+        height: 35px
+        line-height: 33px
+        &::after
+            width: 10px
+            height: 10px
+            margin-top: -6px
+            border-color: $main
+        .list
+            height: 200px
+            overflow-y: auto
+    .btn-primary
+        font-family: $Montserrat
+        font-weight: 700
+        font-size: 12px
+        text-transform: uppercase
+        background-color: $main
+        border: none
+        padding: 20px 40px
+        line-height: 1
+        @include transition-in
+        &:hover
+            background-color: rgba($main, 0.7)
+            @include transition-out
+    
+    .result-message
+        margin-bottom: 12px
+
+    .form_pass_input
+        position: relative
+        svg
+            fill: #a8a8a8
+            width: 15px
+            position: absolute
+            top: 0
+            right: 11px
+            bottom: 0
+            margin: auto 0
+
+
+
+// history orders
+.personal-box
+    .orders__item        
+        border-top: 1px solid #e9e9e9
+        padding: 30px 0 16px
+        a
+            position: relative
+            display: block
+            &.collapsed
+                .arrow
+                    transform: rotate(135deg)
+
+        .arrow
+            position: absolute
+            top: 0
+            bottom: 0
+            margin: auto
+            right: 0
+            width: 17px
+            height: 17px
+
+    .orders__title
+        .orders__head-top
+            font-size: 18px
+            line-height: 23px
+        .orders__head-bottom
+            margin-top: 10px
+            line-height: 18px
+            span
+                color: #7f7f7f
+            i
+                color: #4fd668
+                font-style: normal
+            strong
+                font-size: 18px
+                line-height: 18px
+                color: #252626
+    .orders
+        &__status
+            margin-right: 35px
+        &__price
+            span
+                color: #252626 !important
+
+    .orders__list
+        padding-left: 40px
+        & > li + li
+            border-top: 1px solid #e9e9e9
+        & > li
+            padding: 40px 0 30px
+        .order__img
+            padding: 6px 14px 0
+        .order__body
+            margin-left: 20px
+            width: 79%
+            .order__name
+                font-size: 16px
+                line-height: 23px
+                color: #252626                
+            .order__info-list
+                li
+                    color: #252626
+                    margin-right: 20px
+                    margin-top: 10px
+                    &:last-child
+                        margin-right: 0
+                    h6
+                        font-size: 13px
+                        line-height: 13px
+                        margin-bottom: 0
+                        color: #7f7f7f
+                        
+                    .order__old-price
+                        color: #a9aaaa
+                        position: relative
+                        margin-right: 11px
+                        &::before
+                            content: ''
+                            display: block
+                            position: absolute
+                            top: 58%
+                            left: 0
+                            right: 0                  
+                            width: calc(100% + 7px)
+                            height: 1px
+                            background-color: #a9aaaa
+                    
+
+// favorite list
+.favorite-result
+    padding-top: 20px
+    border-top: 1px solid #e9e9e9
+    margin-top: 30px
+    color: #7f7f7f
+    strong
+        font-size: 24px
+        line-height: 24px
+        color: #252626
+    .favorite-result__item:first-child
+        margin-right: 10px
+
+
+.favorite-block
+
+.products
+    &__item-favorite
+        padding: 60px 15px 30px 55px
+        &:nth-of-type(3)
+            
+    &__name
+        font-size: 13px
+
+.col-auto:nth-child(3n) .products__item-favorite
+    border-right: 0px solid transparent
+
+
+        
+
+
+
+
+@media screen and (max-width: 768px)
+    .personal-nav
+        margin-bottom: 20px
+
+    .personal-box
+        .orders__list
+            padding-left: 0
+
+    .personal-box
+        padding: 35px 20px
+
+
+@media screen and (max-width: 576px)
+
+    .products
+        &__item-favorite
+            border-right: 1px solid transparent
+
+
+    .personal-box
+        h2
+            margin-bottom: 10px        
+        .orders__item
+            padding: 20px 0 16px
+        .orders__title 
+            .orders__head-top
+                font-size: 15px
+                line-height: 20px
+            .orders__head-bottom 
+                strong
+                    font-size: 16px
+                    line-height: 16px
+                span + span
+                    margin-top: 7px
+            
+
+
+
+        .order__img
+            width: 100%
+            text-align: center
+        .orders__list 
+            & > li
+                padding: 20px 0 15px
+            .order__body
+                width: 100%
+                margin-left: 0
+                margin-top: 15px
+                .order__info-list li
+                    display: block
+
+    

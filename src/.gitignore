@@ -1,0 +1,16 @@
+.idea
+.htaccess
+/config.php
+/admin/config.php
+
+!index.html
+
+/image/
+/system/cache/
+/system/logs/
+
+/import/
+node_modules/
+package-lock.json
+/system/storage/
+robots.txt

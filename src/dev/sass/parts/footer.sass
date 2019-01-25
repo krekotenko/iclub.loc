@@ -1,0 +1,112 @@
+
+.footer
+    background-color: $darkBlue
+    padding: 55px 0 40px
+    color: $white
+    a
+        color: $white
+        display: block
+        width: 100%
+    &-blocks
+        margin: 0
+    .copyright
+        margin-top: 25px
+        opacity: .7
+    .developers
+        margin-top: 20px
+        span
+            opacity: .7
+    .dev-logo
+        display: inline-block
+        width: auto
+        margin-top: 6px
+        @include transition-in
+        &:hover
+            opacity: 0.5
+            @include transition-out
+
+    &-menu
+        margin-left: -30px
+        ul
+            li
+                a
+                    font-size: 12px
+                    line-height: 12px
+                    text-transform: uppercase
+                    @include transition-in
+                    &:hover
+                        text-decoration: underline
+                        @include transition-out
+                & + li
+                    margin-top: 20px
+                    
+
+    &__title
+        font-size: 12px
+        line-height: 12px
+        margin: 0
+        opacity: .7
+
+
+    &-contact
+        &__title
+            margin-bottom: 5px
+        ul
+            li + li
+                margin-top: 15px
+        &__item
+            @include transition-in
+            &:hover
+                opacity: 0.5
+                @include transition-out
+        &__phone
+            font-size: 24px
+            line-height: 24px
+        &__mail
+            font-size: 18px
+            line-height: 18px
+        &__timework
+            font-size: 18px
+            line-height: 18px
+    
+
+    &-social
+        ul
+            display: inline-block
+            vertical-align: top
+            &:first-child
+                margin-right: 45px
+            li + li
+                margin-top: 30px        
+        &__icon
+            margin-right: 6px
+        &__name
+            font-size: 13px
+            line-height: 13px
+            @include transition-in
+        a:hover
+            .footer-social__name
+                text-decoration: underline
+                @include transition-out
+        &__title
+            margin-bottom: 15px
+        &__item
+            margin-top: 10px
+
+@media screen and (max-width: 768px)
+    .footer-menu
+        margin-left: 0
+
+    .footer
+        padding: 30px 0 40px
+        &-blocks
+            margin-top: 25px
+    
+    .footer-menu ul li + li
+        margin-top: 15px
+    
+    .footer-contact__phone,
+    .footer-contact__mail,
+    .footer-contact__timework
+        font-size: 15px
+        line-height: 15px

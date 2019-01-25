@@ -1,0 +1,207 @@
+.checkout_block
+    margin-top: 20px
+
+.checkout_part
+    background-color: $white
+    padding: 30px 20px
+    box-shadow: 0px 0px 50px 0px rgba(50, 51, 55, 0.1)
+
+.checkout_data
+    flex-grow: 1
+
+.checkout_data_paragraph
+    line-height: 35px
+    font-family: $Montserrat
+    font-size: 18px
+    color: $fontColor
+    &:last-child
+        margin-top: 14px
+    &:first-child
+        margin-bottom: 15px
+    .paragraph_number
+        display: inline-block
+        vertical-align: middle
+        width: 35px
+        height: 35px
+        line-height: 33px
+        border: 1px solid $main
+        border-radius: 50%
+        text-align: center
+        font-weight: 600
+        margin-right: 10px
+    .paragraph_name
+        display: inline-block
+        vertical-align: middle
+        font-weight: 400
+
+.checkout_data_content
+    max-width: 620px
+.checkout_form
+    .label
+        font-size: 13px
+        color: $lightGray2
+        margin-top: 15px
+        margin-bottom: 12px
+        a, span
+            color: $main
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label
+        vertical-align: top
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before
+        width: 20px
+        height: 20px
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after
+        background: $main
+    [type="radio"]:checked + label:after, 
+    [type="radio"]:not(:checked) + label:after
+        width: 10px
+        height: 10px
+        top: 5px
+        left: 5px
+    .radio_group label
+        font-size: 14px
+        color: $fontColor
+        margin-bottom: 12px
+        margin-right: 28px
+        &:last-child
+            margin-right: 0
+    label .clarification
+        font-size: 12px
+        color: $lightGray2
+
+.checkout_select.nice-select
+    padding-left: 10px
+    &::after
+        width: 9px
+        height: 9px
+
+.checkout_order_title
+    font-family: $Montserrat
+    font-size: 18px
+    color: $fontColor
+
+.checkout_order
+    flex-shrink: 0
+    width: 370px
+    padding-left: 16px
+    margin-left: 30px
+    .cart_item
+        &_image
+            margin-right: 10px
+            width: 80px
+            height: 60px
+        &_name_text
+            color: #7f7f7f
+            line-height: 15px
+            font-size: 13px
+            margin-bottom: 0
+
+    .cart_buttons
+        display: block
+    .cart_item_cost
+        display: block
+    .cart_item_total_cost
+        margin-top: 15px
+        font-size: 12px        
+        span
+            font-weight: 400
+            font-size: 14px
+            color: #252626
+        &:before
+            content: 'х'
+            font-size: 18px
+            line-height: 14px
+            margin-right: 7px
+    .cart_summary_block
+        text-align: left
+    .btn-border-gray,
+    .btn-form.btn-make-order
+        display: block
+        min-width: 230px
+        margin-left: 0 !important
+        margin-right: auto !important
+    .cart_summary_cost
+        font-size: 22px
+    .cart_item_count   
+        order: 1
+        margin: 10px 8px 0 0
+
+    .cart_item_calc .multiply
+        display: none
+
+    .cart_item
+        padding: 20px 0 30px 0
+
+.promo_input_block
+    padding: 20px 0 25px 0
+    input::-webkit-input-placeholder
+        font-size: 14px
+        color: rgba(37, 38, 38, .5)
+    input::-moz-placeholder
+        font-size: 14px
+        color: rgba(37, 38, 38, .5)
+    input:-ms-input-placeholder
+        font-size: 14px
+        color: rgba(37, 38, 38, .5)
+    input:-moz-placeholder
+        font-size: 14px
+        color: rgba(37, 38, 38, .5)
+
+.checkout_delivery_cost
+    margin-bottom: 10px
+    .text
+        font-size: 13px
+        color: $lightGray2
+    .price
+        font-size: 14px
+        color: $fontColor
+
+.checkout_summary_price
+    color: $fontColor
+    margin-bottom: 20px
+    .text
+        font-size: 18px
+    .price
+        font-size: 18px
+        font-weight: 700
+        span
+            font-size: 24px
+
+.checkout_form input[type="submit"].btn-form
+    padding: 16px 15px
+    font-size: 12px
+    min-width: 240px
+
+
+@media screen and (max-width: 900px)
+    .checkout_block
+        display: block
+
+    .checkout_order
+        margin-left: 0
+        width: 100%
+        .cart_item_count
+            width: auto
+            order: 0
+            margin: 0
+        .cart_item_calc .multiply
+            display: block
+
+@media screen and (max-width: 520px)
+    .checkout_order
+        .cart_item_count
+            width: 100%
+            order: 1
+            margin: 13px 0 0 0
+
+        .cart_item_calc .multiply
+            display: none
+
+@media screen and (max-width: 420px)
+    .checkout_order
+        .cart_item
+            display: block
+        .cart_item_image
+            margin: 0 0 15px 0

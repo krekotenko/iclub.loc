@@ -1,0 +1,473 @@
+.product
+    &-block
+        margin-top: 20px
+    &__title
+        font-size: 14px
+        color: $dark
+        margin-bottom: 5px
+    &-carousel
+        .slick-arrow
+            width: 16px
+            height: 16px
+            left: calc(50% - 8px)
+        .slick-prev
+            transform: rotate(-45deg)
+            top: -45px
+        .slick-next
+            transform: rotate(135deg)
+            bottom: -45px
+    &-nav
+        width: 100%
+        max-width: 100px
+        border-right: 1px solid #e9e9e9
+        padding: 80px 0
+        &__item
+            padding: 15px 0
+            cursor: pointer
+            @include transition-in
+            &:hover
+                opacity: 0.6
+                @include transition-out
+
+    &-for
+        width: 80%
+        margin: 0 auto
+
+    &-timer
+        position: relative 
+        padding-left: 110px
+        &__descr
+            margin-top: 7px
+            position: relative
+            z-index: 2
+        & svg
+            position: absolute
+            top: -5px
+            left: -20px
+            transform: rotate(45deg)
+        .day-time
+            background-color: $main
+            color: $white
+            font-size: 16px
+            line-height: 16px
+            text-align: center
+            padding: 8px
+            width: 40px
+            height: 40px
+            position: relative
+            z-index: 2
+            font-weight: 200
+        .day
+            font-size: 10px
+            line-height: 10px
+        .deliver
+            color: $main
+            font-size: 24px
+            line-height: 18px
+            padding: 10px 5px
+
+    
+    &-elements
+        background-color: $white
+        height: 100%
+    &-element        
+        border-bottom: 1px solid #e9e9e9
+        &:last-child
+            border-bottom: none
+    &-box
+        padding: 15px 25px
+        overflow: hidden
+    &-carousel
+        background-color: $white
+        .slick-slide img
+            margin: 0 auto
+
+
+    &-colors
+        &-list
+            margin: 0 -10px
+            li  
+                display: inline-block
+                vertical-align: middle
+                margin: 10px     
+
+        &__item
+            width: 28px
+            height: 28px
+            border-radius: 100%
+            position: relative
+            display: block
+            cursor: pointer       
+            &::before
+                content: ''
+                display: block
+                position: absolute
+                top: -6px
+                left: -6px
+                width: 40px
+                height: 40px
+                border: 1px solid #ededed
+                border-radius: 100%
+                @include transition-in
+            &.active::before
+                border: 2px solid $main
+            &:hover::before
+                border: 2px solid $main
+                @include transition-out
+
+
+    &-add
+        &__notAvailable
+           color: gray
+           margin-bottom: 10px
+        &__available
+            color: #4fd668
+            margin-bottom: 10px
+            &::before
+                content: ''
+                display: inline-block
+                vertical-align: middle
+                width: 12px
+                margin-top: -4px
+                margin-right: 8px
+                height: 7px
+                border-top: 3px solid #4fd668
+                border-right: 3px solid #4fd668
+                transform: rotate(135deg)
+    &__prices_add
+        & span:first-child, & strong
+            font-size: 36px
+            line-height: 36px
+        & span
+            font-size: 18px
+            line-height: 26px
+        &::before
+            top: calc(50% - 1px)
+
+    &-reviews
+        &__count
+            color: #7f7f7f
+            font-size: 12px
+        &__stars .products__stars
+            margin-right: 6px   
+        &-option
+            color: $dark
+            margin-top: 10px
+            &-group
+                &__raiting
+                    position: relative     
+                    height: 20px
+                    overflow: hidden
+                    margin: 0 10px
+                &__count
+                    color: #7f7f7f 
+            &__empty
+                position: relative
+                span
+                    display: inline-block
+                    vertical-align: middle
+                    width: 20px
+                    height: 5px
+                    background-color: #c8c9c9
+                    border-radius: 2px
+            &__full
+                position: absolute
+                top: 0
+                left: 0
+                z-index: 2
+                span
+                    display: inline-block
+                    vertical-align: middle
+                    width: 20px
+                    height: 5px
+                    background-color: $main
+                    border-radius: 2px
+
+
+
+
+    &-bottom
+        margin-top: 30px
+        background-color: $white
+        .h4
+            margin-bottom: 18px
+        &-element
+            padding: 40px 30px 50px
+            position: relative
+            &::after
+                content: ''
+                display: block
+                width: calc(100% + 30px)
+                height: 1px
+                background-color: #e9e9e9
+                position: absolute
+                bottom: 0
+                left: 0
+                right: 0
+            &:last-child::after
+                display: none
+
+    &-descr
+        &__title
+            span
+                color: #7f7f7f
+        &__body
+            color: #7f7f7f
+            font-size: 14px
+            line-height: 24px
+            max-width: 90%
+            position: relative
+        &__height
+            height: 140px
+            overflow: hidden
+            @include transition-in
+            &::after
+                content: ''
+                display: block
+                width: 100%
+                height: 60px
+                position: absolute
+                left: 0
+                bottom: 0
+                background: linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,1) 75%,rgba(255,255,255,1) 100%)
+                opacity: 1
+                visibility: visible
+                @include transition-in
+            &.open
+                height: auto
+                overflow: visible
+                @include transition-out
+                &::after
+                    opacity: 0
+                    visibility: hidden
+                    @include transition-out
+                & + .product-descr__read-more .arrow
+                    transform: rotate(-45deg)
+                    top: 2px
+                    @include transition-out       
+
+            
+
+        &__read-more
+            color: $main
+            margin-top: 25px
+            display: block
+            @include transition-in
+            .arrow
+                transform: rotate(135deg)
+                position: relative
+                top: -2px
+                margin-left: 8px
+                width: 8px
+                height: 8px
+                @include transition-in
+            &:hover
+                opacity: 0.6
+                color: $main
+                @include transition-out
+
+
+    &-character
+        padding-top: 70px
+        &-table
+            tr
+                td
+                    border: none
+                    font-size: 14px
+                    padding: 7px 0
+                td:first-child
+                    color: #7f7f7f
+
+
+
+    &-comments
+        border-left: 1px solid #e9e9e9
+        height: 100%
+        &__name
+            display: inline-block
+            margin-right: 10px
+            font-family: $Montserrat
+            font-weight: 600
+            font-size: 14px
+        &__date
+            color: #7f7f7f
+            font-size: 12px
+            line-height: 12px
+        &-element
+            border-bottom: 1px solid #dfdfdf
+            padding-bottom: 18px
+            margin-top: 18px
+            &:nth-last-of-type(2)
+                border-bottom: none
+                position: relative
+                &::after
+                    content: ''
+                    display: block
+                    position: absolute
+                    left: -30px
+                    bottom: 0
+                    width: calc(100% + 60px)
+                    height: 1px
+                    background-color: #dfdfdf
+            .products__stars
+                height: 24px            
+        &-body
+            &__text
+                line-height: 18px 
+            &__item
+                margin-top: 7px
+
+        &-form
+            padding-top: 47px         
+            &__title
+                font-size: 18px
+                line-height: 18px
+                font-family: $Montserrat
+                font-weight: 600
+            &__subtitle
+                font-size: 14px
+                line-height: 14px
+                color: #7f7f7f
+                margin-bottom: 7px
+            &-group
+                margin-top: 15px
+
+            .product-reviews-option
+                &__empty span
+                    background-color: $white
+                    border: 1px solid #d7d7d7
+                    cursor: pointer
+                    height: 7px
+                    width: 22px
+                    @include transition-in
+                    &.active, &.hovered
+                        background-color: $main
+                        border: 1px solid $main
+                &-group__name
+                    font-size: 12px
+
+            .form-control
+                height: 35px
+            textarea.form-control
+                height: 70px
+
+            label
+                color: #7f7f7f
+            .btn-primary
+                font-size: 12px
+                padding: 15px 20px
+
+            .result-message
+                margin-top: 12px
+                margin-bottom: 0
+
+
+    &-related
+        margin-top: 60px
+
+
+.btn
+    &-buy
+        &_product
+            padding: 0 25px
+            text-align: center
+            line-height: 49px
+            height: 51px
+            font-size: 18px
+            margin-right: 6px
+
+    &-like
+        &_product
+            padding: 11px
+
+
+
+.products-related
+    .products-wrapper
+        height: auto 
+        max-width: none           
+    .products__item
+        height: auto
+        max-width: none
+        border-right: none
+
+    .slick-arrow
+        top: -48px
+        right: 0
+        width: 17px
+        height: 17px
+    .slick-prev
+        right: 50px
+    .slick-next
+        right: 25px
+
+            
+
+
+
+@media screen and (max-width: 992px)
+    .product
+        &-comments
+            border: none
+            border-top: 1px solid #e9e9e9
+        &-carousel
+            margin-bottom: 30px
+        &-bottom-element::after
+            width: 100%
+
+    
+
+
+@media screen and (max-width: 576px)
+    .product
+        &-for
+            padding: 30px 0 60px
+            .slick-dots
+                bottom: -50px
+                top: auto
+                left: 0
+                right: 0
+                width: 100%
+                text-align: center
+        &-nav
+            display: none
+
+        &-timer
+            padding-left: 0
+            svg
+                top: 15px
+                left: -35px
+                opacity: 0.15
+
+        &__prices_add
+            & span:first-child, & strong
+                font-size: 22px
+                line-height: 22px
+            & span
+                font-size: 18px
+                line-height: 26px
+            &::before
+                top: calc(50% - 1px)
+
+        &-descr__body
+            font-size: 13px
+            line-height: 22px
+            max-width: 100%
+        &-character
+            margin-top: 0
+            &-table tr td
+                font-size: 13px
+                padding: 7px 5px
+
+        &-colors__item
+            width: 20px
+            height: 20px
+            &::before
+                top: -5px
+                left: -5px
+                width: 30px
+                height: 30px
+        
+    .products-related 
+        .slick-arrow
+            top: auto

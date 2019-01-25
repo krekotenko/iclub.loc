@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700')
+
+// Variables
+$font: 'Open Sans', sans-serif
+$fontHeader: 'Montserrat', sans-serif;
+$fontStrong: 'Open Sans', sans-serif
+$fontColor: #252626
+$fontSize: 13px
+$lineHeight: 20px
+$Montserrat: 'Montserrat', 'Open Sans', sans-serif
+
+// colors
+$placeholder: #ffffff
+$main: #269fee
+$white: #ffffff
+$background: #f6f6f6
+$darkBlue: #0b2c42
+$lightGray: #f6f6f6
+$lightGray2: #7f7f7f
+$gray: #a0a1a1
+$dark: #252626
+
+h2
+  font-size: 24px
+
+// transition
+@mixin transition-in
+  transition: all .25s ease-in
+@mixin transition-out
+  transition: all .25s ease-out
+
+// components
+html,
+body
+  height: 100%
+body
+  font-family: $font
+  font-size: $fontSize
+  line-height: $lineHeight
+  font-weight: 400
+  color: $fontColor
+  background-color: #f6f6f6
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  overflow-x: hidden
+a
+  text-decoration: none
+  color: $fontColor
+  &:hover
+    text-decoration: none
+    color: $fontColor
+    
+img
+	max-width: 100%
+	height: auto
+embed,
+object,
+iframe,
+video
+  width: 100%
+  height: auto
+h1,h2,h3,h4
+  font-family: $fontHeader
+  font-weight: 700
+
+strong
+  font-family: $fontStrong
+  font-weight: 700
+
+input::placeholder
+    color: $dark
+    opacity: 0.5
+    @include transition-out
+
+textarea::placeholder
+    color: $dark
+    opacity: 0.5
+    @include transition-out
+
+input:focus::placeholder,
+textarea:focus::placeholder
+  opacity: 0
+  @include transition-in
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration
+  display: none
+  width: 0
+  height: 0
+
+.background-store,
+.modal-store,
+.svg-store,
+select
+  display: none
+  
+
+body
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+main
+  flex: 1
+
+%wrapper
+  width: 100%
+  margin: 0 auto
+  padding: 0 15px
+  height: 100%
+  
+.wrapper
+  @extend %wrapper
+  max-width: 1200px
+  
+.wrapper-large
+  @extend %wrapper
+  max-width: 1720px
+
+.wrapper-medium
+  @extend %wrapper
+  max-width: 1000px
+
+.wrapper-small
+  @extend %wrapper
+  max-width: 800px
+
+*
+  &:active,
+  &:focus 
+    outline: 0!important
+    outline: none!important
+    -webkit-tap-highlight-color: transparent!important
+
+ul,
+ol
+  padding: 0
+  margin: 0
+  list-style: none
+
+
+
+.colored
+  &_main
+    color: $main
+    fill: $main
+  &_white
+    color: $white
+    fill: $white
+  &_light-gray
+    color: $lightGray
+    fill: $lightGray
+  &_gray
+    color: $gray
+    fill: $gray
+  &_dark
+    color: $dark
+    fill: $dark
+
+
+.reverse-icon
+  transform: scale(-1 1)
+
+.page-section
+  padding: 30px 0 70px
+
+
+.inline-groups
+  &__top
+    & > *
+      display: inline-block
+      vertical-align: top
+  &__middle
+    & > *
+      display: inline-block
+      vertical-align: middle
+  &__bottom
+    & > *
+      display: inline-block
+      vertical-align: bottom
+
+
+.clearfix:after
+  content: ''
+  display: table
+  clear: both
+
+.flex-nowrap
+  display: flex
+
+.flex-block
+  display: flex
+  flex-wrap: wrap
+
+.flex-group
+  margin-left: -15px
+  margin-right: -15px
+
+.flex-item
+  padding: 0 15px
+
+.content-between
+  justify-content: space-between
+
+.content-around
+  justify-content: space-around
+
+.content-center
+  justify-content: center
+
+.items-top
+  align-items: flex-start
+
+.items-center
+  align-items: center
+
+.items-bottom
+  align-items: flex-end
+    
+
+
+
+// bootstrap
+.h1
+  font-family: $Montserrat
+  font-size: 36px
+  line-height: 42px
+  font-weight: 600
+  margin: 0
+  padding: 0
+  color: $dark
+
+.h4
+  margin: 0
+  padding: 0
+  font-family: $Montserrat
+  font-weight: 800
+  color: $dark
+  font-size: 24px
+  line-height: 32px
+
+.form-control
+  height: 40px
+  width: 100%
+  border-radius: 0
+  font-size: 13px
+  &:focus
+    box-shadow: none
+    border: 1px solid #ced4da
+.btn
+  border-radius: 0
+  &:focus
+    box-shadow: none
+
+.colpadding0
+  padding: 0 !important
+
+*.mb0
+  margin-bottom: 0
+
+.breadcrumb
+  background: none
+  margin-bottom: 0
+  padding: 0
+  padding-bottom: 30px
+  &-item   
+    a
+      color: #7f7f7f
+      color: #7f7f7f
+      font-size: 13px
+      line-height: 13px
+    &.active
+      color: #252626
+  &-item + &-item
+    padding-left: 0
+    &::before
+      content: ""
+      display: inline-block
+      vertical-align: middle
+      width: 7px
+      height: 7px
+      padding: 0
+      border-top: 1px solid #7f7f7f
+      border-right: 1px solid #7f7f7f
+      transform: rotate(45deg)
+      margin: 0 10px
+
+// slick
+.slick-arrow
+  position: absolute    
+  font-size: 0
+  background-color: transparent
+  border: none
+  border-top: 2px solid $main
+  border-right: 2px solid $main    
+  padding: 0
+  cursor: pointer
+.slick-next 
+  transform: rotate(45deg)
+.slick-prev
+  transform: rotate(-135deg)
+
+.slick-dots
+  li
+    display: inline-block
+    vertical-align: middle
+    width: 16px
+    height: 16px
+    background-color: transparent
+    border: 1px solid $main
+    border-radius: 100%
+    cursor: pointer
+    @include transition-in
+    &.slick-active
+      background-color: $main
+      @include transition-out
+    & + li
+      margin-left: 10px
+    button
+      display: none
+
+// pagination
+.pagination_block
+  padding-top: 70px
+  .page-link
+    color: $main
+    font-size: 16px
+    border: 1px solid transparent
+    background-color: transparent
+    padding: 0 5px
+    height: 40px
+    line-height: 40px
+    width: 40px
+    text-align: center
+  .page-item
+    margin-right: 5px
+    &:last-child
+      margin-right: 0
+    &.active .page-link
+      border-radius: 0
+      border-color: #8ecaf2
+      color: $fontColor
+      background-color: transparent
+
+// select
+.nice-select
+  float: none
+  border-radius: 0
+  .list
+    width: 100%
+    border-radius: 0
+
+
